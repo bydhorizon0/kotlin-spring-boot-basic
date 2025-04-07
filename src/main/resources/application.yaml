@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/bootex
+    username: root
+    password: root123
+  security:
+    user:
+      name: user
+      password: '$2a$10$5ZY0wgNxPLBxyEzoskil2uup45smtxKTaULF4r6MFuhZtXf2.nEk2'
+  devtools:
+    livereload:
+      enable: true
