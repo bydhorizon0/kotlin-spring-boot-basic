@@ -18,6 +18,7 @@ repositories {
 	mavenCentral()
 }
 
+// 버전을 명시하지 않으면 Spring boot BOM(Bill Of Materials)에 따라 자동 결정된다.
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-validation")
 	implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
