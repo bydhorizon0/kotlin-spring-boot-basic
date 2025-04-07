@@ -43,7 +43,14 @@ class SecurityConfig(private val userDetailService: UserDetailService) {
     fun filterChain(http: HttpSecurity): SecurityFilterChain {
         return http.csrf { it.disable() }
             .authorizeHttpRequests {
-                it.requestMatchers("/auth/signup", "/auth/signup/**").permitAll()
+                it.requestMatchers(
+                    "/",
+                    "/auth/**",
+                    "/css/**",
+                    "/js/**",
+                    "/images/**",
+                    "/auth/signup/**"
+                ).permitAll()
                     .anyRequest()
                     .authenticated()
             }
