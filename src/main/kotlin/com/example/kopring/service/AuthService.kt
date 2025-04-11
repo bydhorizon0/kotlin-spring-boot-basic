@@ -16,7 +16,9 @@ class AuthService(
 
     fun signup(signupForm: SignupForm) {
         val encodedPassword = passwordEncoder.encode(signupForm.password)
-        authRepository.insert(signupForm.email, encodedPassword)
+        val user = User(email = signupForm.email, password = encodedPassword)
+
+        authRepository.save(user)
     }
 
     private fun getUserByEmail(email: String): User {
