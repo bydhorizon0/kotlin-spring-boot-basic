@@ -39,4 +39,9 @@ class AuthController(private val authService: AuthService) {
         authService.signup(signupForm)
         return "redirect:/login"
     }
+
+    @GetMapping("/login")
+    fun login() = "auth/login"
+
+
 }
