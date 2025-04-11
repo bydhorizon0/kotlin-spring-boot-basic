@@ -28,6 +28,7 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.4")
 
+	implementation("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 
 	runtimeOnly("org.mariadb.jdbc:mariadb-java-client")
