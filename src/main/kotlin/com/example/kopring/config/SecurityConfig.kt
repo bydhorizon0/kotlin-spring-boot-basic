@@ -49,14 +49,17 @@ class SecurityConfig(private val userDetailService: UserDetailService) {
                     "/js/**",
                     "/bootstrap/**",
                     "/auth/signup",
-                    "/auth/signup/**"
+                    "/auth/signup/**",
+                    "/auth/login"
                 )
                     .permitAll()
                     .anyRequest()
                     .authenticated()
             }
             .formLogin {
-                it.defaultSuccessUrl("/", true)
+                it.loginPage("/auth/login") // 커스텀 로그인 페이지 경로
+                    .loginProcessingUrl("/auth/login") // 폼에서 POST로 로그인 처리할 URL
+                    .defaultSuccessUrl("/", true)
                     .permitAll()
             }.build()
     }
