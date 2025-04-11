@@ -61,6 +61,11 @@ class SecurityConfig(private val userDetailService: UserDetailService) {
                     .loginProcessingUrl("/auth/login") // 폼에서 POST로 로그인 처리할 URL
                     .defaultSuccessUrl("/", true)
                     .permitAll()
+            }.logout {
+                it.logoutUrl("/auth/logout") // 로그아웃 요청 URL
+                    .logoutSuccessUrl("/") // 로그아웃 성공 후 이동할 URL
+                    .invalidateHttpSession(true)
+                    .deleteCookies("JSESSIONID") // 세션 쿠키 삭제
             }.build()
     }
 }
