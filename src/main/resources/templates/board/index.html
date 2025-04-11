@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{common/layouts/baseLayout}">
+
+<th:block layout:fragment="title">
+    <title>게시판</title>
+</th:block>
+
+<th:block layout:fragment="ContentFragment">
+
+    <!-- boardList를 받아서 목록을 보여준다 -->
+    <div class="container">
+        <h1>게시판 목록</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>제목</th>
+                    <th>이메일</th>
+                    <th>작성일</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="board, iterStat : ${boardList}">
+                    <td th:text="${iterStat.count}">1</td>
+                    <td>
+                        <a th:href="@{'/board/' + ${board.seq}}"
+                            th:text="${board.title}">
+                        </a>
+                    </td>
+                    <td th:text="${board.userEmail}"></td>
+                    <td th:text="${#temporals.format(board.createdAt, 'yyyy-MM-dd HH:mm')}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</th:block>
+</html>
