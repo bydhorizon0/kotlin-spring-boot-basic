@@ -2,13 +2,14 @@
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{common/layouts/defaultLayout}"
-      layout:fragment="Content">
-<head>
-	<meta charset="UTF-8">
-	<title>로또 명당</title>
-</head>
-<body>
+      layout:decorate="~{common/layouts/baseLayout}">
 
-</body>
+<th:block layout:fragment="title">
+	<title>메인</title>
+</th:block>
+
+	<th:block layout:fragment="ContentFragment">
+		<h1>메인 페이지</h1>
+	</th:block>
+
 </html>
