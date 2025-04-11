@@ -4,36 +4,40 @@
       xmlns:layout="http://ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{common/layouts/baseLayout}">
 
-    <th:block layout:fragment="title">
-        <title>회원가입</title>
-    </th:block>
+<th:block layout:fragment="title">
+    <title>회원가입</title>
+</th:block>
 
-    <th:block layout:fragment="ContentFragment">
-        <div class="d-flex justify-content-center align-items-center vh-100 bg-light">
-            <h2>회원가입</h2>
+<th:block layout:fragment="ContentFragment">
+    <div class="d-flex justify-content-center align-items-center vh-100 bg-light">
+        <div class="card p-4 shadow" style="min-width: 300px;">
+            <h3 class="mb-3">회원가입</h3>
 
             <form th:action="@{/auth/signup}" method="post" th:object="${signupForm}">
-                <div>
-                    <label for="email">이메일</label>
-                    <input type="email" id="email" th:field="*{email}" required>
+                <div class="mb-3">
+                    <label for="email" class="form-label">이메일</label>
+                    <input type="email" class="form-control" id="email" th:field="*{email}" required>
                     <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color:red"></div>
                 </div>
 
-                <div>
-                    <label for="password">비밀번호</label>
-                    <input type="password" id="password" th:field="*{password}" required>
+                <div class="mb-3">
+                    <label for="password" class="form-label">비밀번호</label>
+                    <input type="password" class="form-control" id="password" th:field="*{password}" required>
                     <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}" style="color:red"></div>
                 </div>
 
-                <div>
-                    <label for="confirmPassword">비밀번호 확인</label>
-                    <input type="password" id="confirmPassword" th:field="*{confirmPassword}" required>
-                    <div th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}" style="color:red"></div>
+                <div class="mb-3">
+                    <label for="confirmPassword" class="form-label">비밀번호 확인</label>
+                    <input type="password" class="form-control" id="confirmPassword" th:field="*{confirmPassword}"
+                           required>
+                    <div th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}"
+                         style="color:red"></div>
                 </div>
 
-                <button type="submit">가입하기</button>
+                <button type="submit" class="btn btn-primary w-100">가입하기</button>
             </form>
         </div>
-    </th:block>
+    </div>
+</th:block>
 
 </html>
