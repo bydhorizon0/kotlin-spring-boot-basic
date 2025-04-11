@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="HeadFragment">
+	<meta charset="UTF-8">
+
+	<!-- jquery -->
+	<script th:src="@{/js/jquery-3.7.1.min.js}"></script>
+	<!-- js -->
+	<script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+	<!-- css -->
+	<link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+
+	<th:block layout:fragment="title">
+		<!-- 각 페이지의 title -->
+	</th:block>
+</head>
+</html>

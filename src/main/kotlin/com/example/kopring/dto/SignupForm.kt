@@ -14,7 +14,6 @@ data class SignupForm(
     val password: String = "",
 
     @field:NotBlank(message = "비밀번호는 필수입니다.")
-    @field:Size(min = 6, message = "비밀번호는 최소 6자 이상입니다.")
     val confirmPassword: String = ""
 ) {
     fun isPasswordMatch(): Boolean = password == confirmPassword

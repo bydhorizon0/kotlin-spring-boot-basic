@@ -11,3 +11,11 @@ spring:
   devtools:
     livereload:
       enable: true
+    restart:
+      enable: true
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8

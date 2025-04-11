@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<footer th:fragment="FooterFragment" class="bg-light text-center text-lg-start mt-5">
+	<div class="container p-4">
+		<div class="row">
+			<div class="col-lg-6 col-md-12 mb-4">
+				<h5 class="text-uppercase">내 사이트</h5>
+				<p>
+					간단한 소개 또는 사이트 목적을 적을 수 있어요.<br>
+					여기에 연락처나 깃허브 링크도 괜찮고요.
+				</p>
+			</div>
+
+			<div class="col-lg-3 col-md-6 mb-4">
+				<h5 class="text-uppercase">링크</h5>
+				<ul class="list-unstyled mb-0">
+					<li><a href="/" class="text-dark">홈</a></li>
+					<li><a href="/auth/signup" class="text-dark">회원가입</a></li>
+					<li><a href="/login" class="text-dark">로그인</a></li>
+				</ul>
+			</div>
+
+			<div class="col-lg-3 col-md-6 mb-4">
+				<h5 class="text-uppercase">정보</h5>
+				<ul class="list-unstyled mb-0">
+					<li><a href="/about" class="text-dark">소개</a></li>
+					<li><a href="/contact" class="text-dark">문의하기</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="text-center p-3 bg-secondary text-white">
+		© 2025 MySite. All rights reserved.
+	</div>
+</footer>
+
+</html>

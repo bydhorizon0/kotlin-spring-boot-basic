@@ -18,7 +18,7 @@ class AuthController(private val authService: AuthService) {
     @GetMapping("/signup")
     fun signup(model: Model): String {
         model.addAttribute("signupForm", SignupForm())
-        return "/auth/signup"
+        return "auth/signup"
     }
 
     @PostMapping("/signup")
@@ -39,4 +39,9 @@ class AuthController(private val authService: AuthService) {
         authService.signup(signupForm)
         return "redirect:/login"
     }
+
+    @GetMapping("/login")
+    fun login() = "auth/login"
+
+
 }

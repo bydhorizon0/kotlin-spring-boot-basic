@@ -45,18 +45,27 @@ class SecurityConfig(private val userDetailService: UserDetailService) {
             .authorizeHttpRequests {
                 it.requestMatchers(
                     "/",
-                    "/auth/**",
                     "/css/**",
                     "/js/**",
-                    "/images/**",
-                    "/auth/signup/**"
-                ).permitAll()
+                    "/bootstrap/**",
+                    "/auth/signup",
+                    "/auth/signup/**",
+                    "/auth/login"
+                )
+                    .permitAll()
                     .anyRequest()
                     .authenticated()
             }
             .formLogin {
-                it.defaultSuccessUrl("/", true)
+                it.loginPage("/auth/login") // 커스텀 로그인 페이지 경로
+                    .loginProcessingUrl("/auth/login") // 폼에서 POST로 로그인 처리할 URL
+                    .defaultSuccessUrl("/", true)
                     .permitAll()
+            }.logout {
+                it.logoutUrl("/auth/logout") // 로그아웃 요청 URL
+                    .logoutSuccessUrl("/") // 로그아웃 성공 후 이동할 URL
+                    .invalidateHttpSession(true)
+                    .deleteCookies("JSESSIONID") // 세션 쿠키 삭제
             }.build()
     }
 }
